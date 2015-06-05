@@ -22,3 +22,18 @@ minimal:
 	do \
 		(cat $$f; echo) >> minimal.zsh-theme; \
 	done;
+
+minimal-path-host:
+	rm -f $B/$@.zsh-theme
+	@echo "making $B/$@.zsh-theme"
+	@for f in \
+		$M/defaults.zsh \
+		$M/user.zsh \
+		$M/jobs.zsh \
+		$M/status.zsh \
+	 	$M/path.zsh \
+		$M/host.zsh \
+		prompt-$@.zsh; \
+	do \
+		(cat $$f; echo) >> $@.zsh-theme; \
+	done;	
